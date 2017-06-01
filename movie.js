@@ -3,7 +3,7 @@ var express = require('express');
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
-
+var PORT = process.env.PORT || 3001;
 
 var seats = [
 	[1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1],
@@ -39,7 +39,7 @@ app.get('/reservation', function(request, response, next){
 app.get('/seats', function(request, response, next){
 	response.send(seats);
 });
-server.listen(3001, function(){
+server.listen(PORT , function(){
 	console.log('Server Running at http://127.0.0.1:3001');
 });
 
